@@ -15,7 +15,7 @@ The game can be repeated by pressing the "Again" button. If the score of the nex
 ### a. Live-preview
 
 The sketching board can be accessed on GitHub Pages by following the link:
-[https://miloskolarov.github.io/Etch-A-Sketch/](https://miloskolarov.github.io/Etch-A-Sketch/)
+[https://miloskolarov.github.io/Guess-the-Number-Game/](https://miloskolarov.github.io/Guess-the-Number-Game/)
 
 ### b. Downloading a local copy
 
