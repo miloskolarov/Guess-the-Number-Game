@@ -27,8 +27,8 @@ document.querySelector('.check').addEventListener('click', function () {
     score--;
     scoreSelect.textContent = score;
     guess > number
-      ? (message.textContent = 'The number is too low!')
-      : 'The number is too high!';
+      ? (message.textContent = 'The number is too high!')
+      : 'The number is too low!';
     // Game Over message
     if (score < 1) {
       message.textContent = 'GAME OVER';
