@@ -1,8 +1,6 @@
 # Guess-the-Number-Game
 
-# Guess-the-Number-Game
-
-##Introduction
+## Introduction
 
 In this project, I have created a simple guess-the-number game. The game was created by using HTML, CSS, and JavaScript. The user interface for this game was designed by Jonas Schmedtmann as part of his Udemy JavaScript course.
 
