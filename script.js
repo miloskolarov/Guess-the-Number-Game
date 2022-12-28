@@ -7,6 +7,9 @@ let highscore = 0;
 let score = 20;
 
 // Write check function
+document.querySelector('.check').addEventListener('click', function () {
+  console.log('Check clicked');
+});
 //Add event listener to check
 //Add function on event ("click")
 
