@@ -23,31 +23,23 @@ document.querySelector('.check').addEventListener('click', function () {
     message.textContent = 'No number...';
 
     // Incorrect number:
-  } else if (number > guess) {
-    message.textContent = 'The number is too low!';
+  } else if (guess !== number) {
     score--;
     scoreSelect.textContent = score;
-
-    if (score < 1) {
-      message.textContent = 'GAME OVER';
-      score = 0;
-      scoreSelect.textContent = score;
-    }
-  } else if (number < guess) {
-    message.textContent = 'The number is too high!';
-    score--;
-    scoreSelect.textContent = score;
-
+    guess > number
+      ? (message.textContent = 'The number is too low!')
+      : 'The number is too high!';
+    // Game Over message
     if (score < 1) {
       message.textContent = 'GAME OVER';
       score = 0;
       scoreSelect.textContent = score;
     }
 
-    // Correct number
+    // Game Won:
   } else if (number === guess) {
     message.textContent = 'You WON!';
-    body.style.backgroundColor = '#60b347';
+    document.querySelector('body').style.backgroundColor = '#60b347';
     secretNumber.style.width = '30rem';
     secretNumber.textContent = number;
 
@@ -60,12 +52,14 @@ document.querySelector('.check').addEventListener('click', function () {
   }
 });
 
+// Start new game:
+
 document.querySelector('.again').addEventListener('click', function () {
   number = Math.trunc(Math.random() * 20) + 1;
   console.log(number);
   scoreSelect.textContent = 20;
   message.textContent = 'Start guessing...';
-  body.style.backgroundColor = '#222';
+  document.querySelector('body').style.backgroundColor = '#222';
   secretNumber.style.width = '15rem';
   secretNumber.textContent = '?';
   let reset = document.querySelector('.guess');
