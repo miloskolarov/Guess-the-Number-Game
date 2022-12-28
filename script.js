@@ -1,9 +1,10 @@
 'use strict';
 
 // starting state
-// generate random number
-//define highscore (0)
-// define current score
+let number = Math.trunc(Math.random() * 20) + 1;
+console.log(number);
+let highscore = 0;
+let score = 20;
 
 // Write check function
 //Add event listener to check
