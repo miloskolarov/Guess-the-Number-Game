@@ -24,7 +24,6 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.message').textContent = 'GAME OVER';
       score = 0;
       document.querySelector('.score').textContent = score;
-      console.log('DEAD');
     }
   } else if (number < guess) {
     document.querySelector('.message').textContent = 'The number is too high!';
@@ -35,8 +34,6 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.message').textContent = 'GAME OVER';
       score = 0;
       document.querySelector('.score').textContent = score;
-
-      console.log('DEAD');
     }
   } else if (number === guess) {
     document.querySelector('.message').textContent = 'You WON!';
@@ -52,7 +49,6 @@ document.querySelector('.check').addEventListener('click', function () {
 });
 
 document.querySelector('.again').addEventListener('click', function () {
-  /* bugg- Highscore gets updated with any score */
   number = Math.trunc(Math.random() * 20) + 1;
   console.log(number);
   document.querySelector('.score').textContent = 20;
