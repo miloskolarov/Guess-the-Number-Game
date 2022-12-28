@@ -6,24 +6,34 @@ console.log(number);
 let highscore = 0;
 let score = 20;
 
-// Write check function
+// Compare the input number with randomly generated number
 document.querySelector('.check').addEventListener('click', function () {
   console.log('Check clicked');
-});
-//Add event listener to check
-//Add function on event ("click")
+  let guess = Number(document.querySelector('.guess').value);
+  console.log(typeof guess);
 
-//function:
-/*   let guess= get the value from the input field and convert it to number 
-     if there is no number print message "No number"
-     if the number is too low print the message "Number is too low" and decrament the score
-     if the number is too high print the message "Number is too high" and decrament the  score
-     if the guess equals the number print the message "You won the game"
-        change background color of body element to green ('#60b347')
-        change the width of ".number" class to '30rem'
-        set ".number" text content to randomly ganerated number
-        if the score is higher than previous higscore, make current score the higscore 
-     if score = 0, print "Game Over" */
+  if (!guess) {
+    document.querySelector('.message').textContent = 'No number...';
+  } else if (number > guess) {
+    document.querySelector('.message').textContent = 'The number is too low!';
+    score--;
+    document.querySelector('.score').textContent = score;
+  } else if (number < guess) {
+    document.querySelector('.message').textContent = 'The number is too high!';
+    score--;
+    document.querySelector('.score').textContent = score;
+  } else if (number === guess) {
+    document.querySelector('.message').textContent = 'You WON!';
+    document.querySelector('body').style.backgroundColor = '#60b347';
+    document.querySelector('.number').style.width = '30rem';
+    document.querySelector('.number').textContent = number;
+    if (score > highscore) {
+      document.querySelector('.highscore').textContent = score;
+    }
+  } else if (number !== guess && score < 1) {
+    console.log('You die'); /*Does not work, return later */
+  }
+});
 
 //Play again functionality:
 /* Add event listener to "Again button"
