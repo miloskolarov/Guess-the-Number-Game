@@ -5,11 +5,12 @@ let number = Math.trunc(Math.random() * 20) + 1;
 console.log(number);
 let highscore = 0;
 let score = 20;
+let guess = Number(document.querySelector('.guess').value);
 
 // Compare the input number with randomly generated number
 document.querySelector('.check').addEventListener('click', function () {
   console.log('Check clicked');
-  let guess = Number(document.querySelector('.guess').value);
+  guess = Number(document.querySelector('.guess').value);
   console.log(typeof guess);
 
   if (!guess) {
@@ -35,12 +36,6 @@ document.querySelector('.check').addEventListener('click', function () {
   }
 });
 
-//Play again functionality:
-/* Add event listener to "Again button"
-       Write a function that resets: score, background color ('#222'),
-       number field width(15rem), number text content("?") number(call random generator),
-       message("Start guessing")  and guess value("");    
-     */
 document.querySelector('.again').addEventListener('click', function () {
   /* bugg- Highscore gets updated with any score */
   number = Math.trunc(Math.random() * 20) + 1;
@@ -51,4 +46,6 @@ document.querySelector('.again').addEventListener('click', function () {
   document.querySelector('body').style.backgroundColor = '#222';
   document.querySelector('.number').style.width = '15rem';
   document.querySelector('.number').textContent = '?';
+  let reset = document.querySelector('.guess');
+  reset.value = reset.defaultValue;
 });
