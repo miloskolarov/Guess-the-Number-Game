@@ -19,10 +19,25 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('.message').textContent = 'The number is too low!';
     score--;
     document.querySelector('.score').textContent = score;
+
+    if (score < 1) {
+      document.querySelector('.message').textContent = 'GAME OVER';
+      score = 0;
+      document.querySelector('.score').textContent = score;
+      console.log('DEAD');
+    }
   } else if (number < guess) {
     document.querySelector('.message').textContent = 'The number is too high!';
     score--;
     document.querySelector('.score').textContent = score;
+
+    if (score < 1) {
+      document.querySelector('.message').textContent = 'GAME OVER';
+      score = 0;
+      document.querySelector('.score').textContent = score;
+
+      console.log('DEAD');
+    }
   } else if (number === guess) {
     document.querySelector('.message').textContent = 'You WON!';
     document.querySelector('body').style.backgroundColor = '#60b347';
@@ -33,8 +48,6 @@ document.querySelector('.check').addEventListener('click', function () {
       highscore = score;
       document.querySelector('.highscore').textContent = highscore;
     }
-  } else if (number !== guess && score < 1) {
-    console.log('You die'); /*Does not work, return later */
   }
 });
 
