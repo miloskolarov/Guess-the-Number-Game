@@ -13,8 +13,12 @@ document.querySelector('.check').addEventListener('click', function () {
   guess = Number(document.querySelector('.guess').value);
   console.log(typeof guess);
 
+  //No input error message:
+
   if (!guess) {
     document.querySelector('.message').textContent = 'No number...';
+
+    // Incorrect number:
   } else if (number > guess) {
     document.querySelector('.message').textContent = 'The number is too low!';
     score--;
@@ -35,11 +39,15 @@ document.querySelector('.check').addEventListener('click', function () {
       score = 0;
       document.querySelector('.score').textContent = score;
     }
+
+    // Correct number
   } else if (number === guess) {
     document.querySelector('.message').textContent = 'You WON!';
     document.querySelector('body').style.backgroundColor = '#60b347';
     document.querySelector('.number').style.width = '30rem';
     document.querySelector('.number').textContent = number;
+
+    // Update the highscore
 
     if (score > highscore) {
       highscore = score;
